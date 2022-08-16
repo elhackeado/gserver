@@ -1,0 +1,18 @@
+syntax = "proto3";
+package api;
+
+option go_package = "./api";
+
+message StudentMessageRequest{
+    string name = 1;
+}
+
+message StudentMessageResponse{
+    int32 id = 1;
+    string name = 2;
+}
+
+service StudentService{
+    rpc GetStudent(StudentMessageRequest) returns (StudentMessageResponse) {}
+}
+
